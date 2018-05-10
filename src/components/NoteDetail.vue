@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: 'Login',
-  data () {
+  name: "Login",
+  data() {
     return {
-      msg: '笔记详情页'
-    }
+      msg: "笔记详情页"
+    };
   }
-}
+};
 </script>
 
 <style scoped>
