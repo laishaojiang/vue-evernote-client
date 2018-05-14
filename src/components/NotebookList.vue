@@ -10,13 +10,13 @@
 
 <script>
 export default {
-  name: "Login",
+  name: 'Login',
   data() {
     return {
-      msg: "笔记本列表"
-    };
+      msg: '笔记本列表'
+    }
   }
-};
+}
 </script>
 
 <style scoped>

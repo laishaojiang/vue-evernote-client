@@ -7,12 +7,12 @@
     data() {
       return {
         user: {
-          username: "hunger"
+          username: 'hunger'
         },
-        slug: "H"
-      };
+        slug: 'H'
+      }
     }
-  };
+  }
 
 </script>
 

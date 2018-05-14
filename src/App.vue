@@ -6,13 +6,13 @@
 </template>
 
 <script>
-  import sidebar from "@/components/Sidebar.vue";
-  export default {
-    name: "App",
+  import sidebar from '@/components/Sidebar.vue'
+export default {
+    name: 'App',
     components: {
       sidebar
     }
-  };
+  }
 
 </script>
 

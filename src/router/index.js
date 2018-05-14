@@ -8,22 +8,21 @@ import TrashDetail from '@/components/TrashDetail'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path:'/login',
-      component:Login
-    },
-    {
-      path:'/notebooks',
-      component:NotebookList
-    },
-    {
-      path:'/note/:noteId',
-      component:NoteDetail
-    },
-    {
-      path:'/trash/:noteId',
-      component:TrashDetail
-    }
+  routes: [{
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/notebooks',
+    component: NotebookList
+  },
+  {
+    path: '/note/:noteId',
+    component: NoteDetail
+  },
+  {
+    path: '/trash/:noteId',
+    component: TrashDetail
+  }
   ]
 })

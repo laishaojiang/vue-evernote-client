@@ -31,8 +31,19 @@
 </template>
 
 <script>
+  import api from '@/api/api'
+  console.log(api)
+  api
+    .getAuth()
+    .then(res => {
+      console.log(res)
+    })
+    .catch(error => {
+      console.error(error)
+    })
+
   export default {
-    name: "Login",
+    name: 'Login',
     data() {
       return {
         isShowRegister: true,
@@ -49,65 +60,97 @@
           isError: false,
           notice: '输入用户名和密码'
         }
-      };
+      }
     },
 
     methods: {
       showRegister() {
-        this.isShowRegister = true;
-        this.isShowLogin = false;
+        this.isShowRegister = true
+        this.isShowLogin = false
       },
 
       showLogin() {
-        this.isShowRegister = false;
-        this.isShowLogin = true;
+        this.isShowRegister = false
+        this.isShowLogin = true
       },
 
       onRegister() {
         if (!this.checkName(this.register.username)) {
-          this.register.isError = true;
-          this.register.notice = '用户名不对';
-          return;
+          this.register.isError = true
+          this.register.notice = '用户名不对'
+          return
         }
         if (!this.checkPassword(this.register.password)) {
-          this.register.isError = true;
-          this.register.notice = '密码不对';
-          return;
+          this.register.isError = true
+          this.register.notice = '密码不对'
+          return
         }
-        this.register.isError = false;
-        this.register.notice = '';
-        console.log('开始注册 用户名为：' + this.register.username + '密码：' + this.register.password)
+        this.register.isError = false
+        this.register.notice = ''
+        console.log(
+          '开始注册 用户名为：' +
+          this.register.username +
+          '密码：' +
+          this.register.password
+        )
+        api
+          .register({
+            username: this.register.username,
+            password: this.register.password
+          })
+          .then(res => {
+            console.log(res)
+          })
+          .catch(error => {
+            console.log(error)
+          })
       },
 
       onLogin() {
         if (!this.checkName(this.login.username)) {
-          this.login.isError = true;
-          this.login.notice = '用户名不对';
-          return;
+          this.login.isError = true
+          this.login.notice = '用户名不对'
+          return
         }
         if (!this.checkPassword(this.login.password)) {
-          this.login.isError = true;
-          this.login.notice = '密码不对';
-          return;
+          this.login.isError = true
+          this.login.notice = '密码不对'
+          return
         }
-        this.login.isError = false;
-        this.login.notice = '';
-        console.log('开始登录 用户名为：' + this.login.username + '密码：' + this.login.password)
+        this.login.isError = false
+        this.login.notice = ''
+        console.log(
+          '开始登录 用户名为：' +
+          this.login.username +
+          '密码：' +
+          this.login.password
+        )
+        api
+          .login({
+            username: this.login.username,
+            password: this.login.password
+          })
+          .then(res => {
+            console.log(res)
+          })
+          .catch(error => {
+            console.log(error)
+          })
       },
       checkName(username) {
-        var reg = /^[\w\u4e00-\u9fa5]{3,15}$/;
+        var reg = /^[\w\u4e00-\u9fa5]{3,15}$/
         if (reg.test(username)) {
-          return true;
+          return true
         } else {
-          return false;
+          return false
         }
       },
       checkPassword(password) {
-        var reg = /^.{6,16}$/;
+        var reg = /^.{6,16}$/
         if (reg.test(password)) {
-          return true;
+          return true
         } else {
-          return false;
+          return false
         }
       }
     }
@@ -183,7 +226,7 @@
         border-top: 1px solid #eee;
         height: 0;
         overflow: hidden;
-        transition: height .4s;
+        transition: height 0.4s;
         &.show {
           height: 193px;
         }

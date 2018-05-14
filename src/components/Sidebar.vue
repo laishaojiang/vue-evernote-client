@@ -19,16 +19,21 @@
 </template>
 
 <script>
-import avatar from "@/components/Avatar.vue"
+import avatar from '@/components/Avatar.vue'
+import api from '@/api/api'
 
 export default {
   components: {
     avatar
   },
   methods: {
-    onLogout: function(event) {}
+    onLogout(event) {
+      api.logout().then(res => {
+        console.log(res)
+      })
+    }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
