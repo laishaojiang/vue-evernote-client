@@ -31,9 +31,8 @@
 </template>
 
 <script>
-  import api from '@/api/api'
-  console.log(api)
-  api
+  import Auth from '@/api/auth'
+  Auth
     .getAuth()
     .then(res => {
       console.log(res)
@@ -93,7 +92,7 @@
           '密码：' +
           this.register.password
         )
-        api
+        Auth
           .register({
             username: this.register.username,
             password: this.register.password
@@ -125,7 +124,7 @@
           '密码：' +
           this.login.password
         )
-        api
+        Auth
           .login({
             username: this.login.username,
             password: this.login.password

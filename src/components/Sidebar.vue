@@ -20,7 +20,7 @@
 
 <script>
 import avatar from '@/components/Avatar.vue'
-import api from '@/api/api'
+import Auth from '@/api/auth'
 
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     onLogout(event) {
-      api.logout().then(res => {
+      Auth.logout().then(res => {
         console.log(res)
       })
     }
